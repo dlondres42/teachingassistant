@@ -1,4 +1,5 @@
 import express = require('express');
+import bodyParser = require("body-parser");
 
 import {Aluno} from '../common/aluno';
 import {CadastroDeAlunos} from './cadastrodealunos';
@@ -15,8 +16,7 @@ var allowCrossDomain = function(req: any, res: any, next: any) {
 }
 taserver.use(allowCrossDomain);
 
-taserver.use(express.json());
-
+taserver.use(bodyParser.json());
 
 taserver.get('/alunos', function (req: express.Request, res: express.Response) {
     res.send(JSON.stringify(cadastro.getAlunos()));
@@ -43,5 +43,5 @@ taserver.put('/aluno', function (req: express.Request, res: express.Response) {
 })
 
 taserver.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Example app listening on port 3000!')
 })

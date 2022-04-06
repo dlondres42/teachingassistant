@@ -7,6 +7,8 @@ import { Aluno } from '../../../common/aluno';
 
 @Injectable()
 export class AlunoService {
+
+  alunos: Aluno[] = [];
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   private taURL = 'http://localhost:3000';
 
@@ -36,3 +38,4 @@ export class AlunoService {
   }
 
 }
+
