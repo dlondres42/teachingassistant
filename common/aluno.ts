@@ -2,6 +2,7 @@ export class Aluno {
     nome: string;
     cpf: string;
     email: string;
+    gitHub: string;
     metas: Map<string,string>;
 
   constructor() {
@@ -12,6 +13,7 @@ export class Aluno {
     this.nome = "";
     this.cpf = "";
     this.email = "";
+    this.gitHub = "";
     this.metas = new Map<string,string>();
   }
 
@@ -20,6 +22,7 @@ export class Aluno {
     aluno.nome = this.nome;
     aluno.cpf = this.cpf;
     aluno.email = this.email;
+    aluno.gitHub = this.gitHub;
     aluno.metas = this.cloneMetas();
     return aluno;
   }
@@ -36,6 +39,7 @@ export class Aluno {
     this.nome = from.nome;
     this.cpf = from.cpf;
     this.email = from.email;
+    this.gitHub = from.gitHub;
     this.copyMetasFrom(from.metas);
   }
 
